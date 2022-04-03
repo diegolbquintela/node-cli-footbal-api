@@ -3,7 +3,7 @@ const writeLeague = require('./writeLeague');
 const league = process.argv[2];
 require('dotenv').config();
 
-const options = {
+const fetchData = {
   method: 'GET',
   url: 'https://api-football-v1.p.rapidapi.com/v3/leagues',
   params: { country: `${league}` },
@@ -14,7 +14,7 @@ const options = {
 };
 
 axios
-  .request(options)
+  .request(fetchData)
   .then(function (response) {
     const responseData = response.data.response[0].league.name;
 
