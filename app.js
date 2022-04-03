@@ -1,6 +1,7 @@
 const axios = require('axios').default;
 const writeLeague = require('./writeLeague');
 const league = process.argv[2];
+require('dotenv').config();
 
 const options = {
   method: 'GET',
